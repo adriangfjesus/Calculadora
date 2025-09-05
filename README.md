@@ -41,15 +41,10 @@ A calculadora permite realizar operações básicas como adição, subtração, 
 
 ## Observações
 
-- Utilizei como referência ideias do vídeo:  
+- Me baseei e utilizei como referência ideias do vídeo:  
 [YouTube: Como criar uma calculadora em HTML, CSS e JS](https://www.youtube.com/watch?v=42TShjXR0m0)  
 
 - O código foi adaptado para parecer mais pessoal
----
-
-## Autor
-
-**Adrian Fernandes**
 
 ---
 
