@@ -30,7 +30,7 @@ A calculadora permite realizar operações básicas como adição, subtração, 
 
 ---
 
-## Tecnologias utilizadas e estudadas
+## Tecnologias utilizadas e o que estou aprendendo
 
 - HTML5
 - CSS3
