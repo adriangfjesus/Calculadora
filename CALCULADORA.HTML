@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do Adrian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(45deg, black, crimson);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+        .calculadora {
+            background: rgba(0,0,0,0.85);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        #tela {
+            width: 210px;
+            height: 35px;
+            margin-bottom: 10px;
+            text-align: right;
+            padding-right: 10px;
+            font-size: 25px;
+            color: black;
+            background-color: white;
+        }
+        .botao {
+            width: 50px;
+            height: 50px;
+            margin: 3px;
+            font-size: 22px;
+            cursor: pointer;
+            background: rgb(31,31,31);
+            border: none;
+            color: white;
+        }
+        .botao:hover {
+            background: black;
+        }
+        table {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <h2>Calculadora do Adrian</h2>
+        <div id="tela"></div>
+        <table>
+            <tr>
+                <td><button class="botao" onclick="limpar()">C</button></td>
+                <td><button class="botao" onclick="apagar()">←</button></td>
+                <td><button class="botao" onclick="adicionar('/')">/</button></td>
+                <td><button class="botao" onclick="adicionar('*')">×</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="adicionar('7')">7</button></td>
+                <td><button class="botao" onclick="adicionar('8')">8</button></td>
+                <td><button class="botao" onclick="adicionar('9')">9</button></td>
+                <td><button class="botao" onclick="adicionar('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="adicionar('4')">4</button></td>
+                <td><button class="botao" onclick="adicionar('5')">5</button></td>
+                <td><button class="botao" onclick="adicionar('6')">6</button></td>
+                <td><button class="botao" onclick="adicionar('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button class="botao" onclick="adicionar('1')">1</button></td>
+                <td><button class="botao" onclick="adicionar('2')">2</button></td>
+                <td><button class="botao" onclick="adicionar('3')">3</button></td>
+                <td rowspan="2"><button class="botao" style="height:106px;" onclick="calcular()">=</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="botao" style="width:106px;" onclick="adicionar('0')">0</button></td>
+                <td><button class="botao" onclick="adicionar('.')">.</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function adicionar(valor) {
+            const tela = document.getElementById('tela');
+            tela.innerText += valor;
+        }
+
+        function limpar() {
+            document.getElementById('tela').innerText = '';
+        }
+
+        function apagar() {
+            const tela = document.getElementById('tela');
+            tela.innerText = tela.innerText.slice(0, -1);
+        }
+
+        function calcular() {
+            const tela = document.getElementById('tela');
+            if (tela.innerText) {
+                try {
+                    tela.innerText = eval(tela.innerText);
+                } catch {
+                    tela.innerText = 'Erro!';
+                }
+            } else {
+                tela.innerText = 'Nada...';
+            }
+        }
+    </script>
+</body>
+</html>
